@@ -1,3 +1,4 @@
+import { ApiUsuarioService } from './services/api-usuario.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { OffCanvasMenuComponent } from './components/off-canvas-menu/off-canvas-menu.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiUsuarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
